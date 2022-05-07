@@ -1,0 +1,10 @@
+.bg-header{
+    height: 3rem;
+    padding-top: 1.5rem;
+    padding-left: 5%;
+    background-color: #835AFD;
+    text-align: start;
+    color: #FFFFFF; 
+    font-weight: bold;
+    font-style: italic;
+}

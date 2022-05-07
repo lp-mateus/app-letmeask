@@ -2,16 +2,17 @@
     height: 51.5rem;  
     background-color: #835AFD;
     color: #FFFFFF;    
-    text-align: start;
+    text-align: center;
     padding-top: 15%;
-    padding-left: 10%;
 
 }
 
 .bg-white{
+    width: fit-content;
     background-color: #FFFFFF;
     color: #835AFD;    
     text-align: center;
+    padding-left: 5%;
 }
 
 .img-resize{

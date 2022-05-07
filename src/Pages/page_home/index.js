@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 function PageHome() {
     
     return (
-      <div className="teste">
+      <div>
         <Grid 
             container 
             justifyContent="center"
@@ -26,7 +26,7 @@ function PageHome() {
                 <div className="bg-white">
                     <h1>LetMeAsk</h1>       
                     <hr></hr>            
-                    <h3>Cadastre-se ou realize Login para acessar todo os conteúdos disponíveis</h3>
+                    <h3>Cadastre-se ou realize Login para acessar todo os conteúdos!</h3>
                     <br></br>
                     <form>                        
                         <label>E-mail:</label>

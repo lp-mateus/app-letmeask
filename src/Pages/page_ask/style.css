@@ -1,0 +1,16 @@
+.main-question{
+    width: fit-content;
+    background-color: #ffffff;
+    color: gray;    
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.img-resize{
+    text-align: center;
+    max-width: 100%;
+    height: 25rem;
+    border-radius: 20%;
+    opacity: 0.9;
+}
