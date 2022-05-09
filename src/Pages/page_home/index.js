@@ -1,4 +1,5 @@
 import './style.css';
+import { NavLink } from 'react-router-dom';
 import Figure from '../../Images/bgfigure.jpg';
 import Grid from '@mui/material/Grid';
 
@@ -36,10 +37,14 @@ function PageHome() {
                         <input type="text" id="email"></input>                       
                     </form>
                     <br></br>
-                    <button>Login</button>
+                    <button>
+                        <NavLink to="/ask" className="link">Login</NavLink>
+                    </button>
                     <br></br>
                     <br></br>
-                    <button>Cadastrar</button>
+                    <button>
+                        <NavLink to="/cadastro" className="link">Cadastrar</NavLink>
+                    </button>
                 </div>                
             </Grid>            
         </Grid>

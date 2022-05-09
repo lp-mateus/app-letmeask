@@ -14,3 +14,8 @@
     border-radius: 20%;
     opacity: 0.9;
 }
+
+.form-question{
+    width: 25rem;
+    height: 10rem;
+}

@@ -16,7 +16,6 @@ function PageAsk() {
             >
                 <Grid item xs={12} md={12} lg={12} align="center">
                     <div className="main-question">
-                        <br></br>
                         <img src={Icon} alt="Card Icon de User" className="img-resize"></img>
                         <h1>Faça sua pergunta a comunidade...</h1>
                         <br></br>
@@ -24,11 +23,13 @@ function PageAsk() {
                             <label>Qual a sua pergunta?</label>
                             <br></br>
                             <br></br>
-                            <input type="text" id="question"></input>
+                            <input type="text" id="question" className="form-question"></input>
                             <br></br>                      
                         </form>
                         <br></br>
-                        <button>Perguntar</button>       
+                        <button>Perguntar</button>      
+                        <br></br> 
+                        <div><br></br></div>
                     </div>                
                 </Grid>
             </Grid>
