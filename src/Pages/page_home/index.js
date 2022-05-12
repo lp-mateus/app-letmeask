@@ -1,3 +1,5 @@
+// Hook
+//import { useNavigate } from 'react-router-dom';
 
 // Material UI
 import './style.css';
@@ -10,6 +12,7 @@ import auth from '../../Services/firebase';
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 const provider = new GoogleAuthProvider();
 
+
 function PageHome() {
 
     // Metodo de Login do Usuario com Google
@@ -17,11 +20,16 @@ function PageHome() {
         signInWithPopup(auth, provider)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
-                console.log(result);                
-                    
+                console.log("SUCESSO: " + result);
+                const user = result.user;
+                window.location.replace("/ask");
+
+                return user;
+                                    
             }).catch((error) => {
                 // Handle Errors here.
                 console.log(error);
+                alert("Failed Login ... Try again with a Google Account!")
             });
     }
     
