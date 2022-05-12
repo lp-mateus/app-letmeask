@@ -1,9 +1,29 @@
+
+// Material UI
 import './style.css';
 import { NavLink } from 'react-router-dom';
 import Figure from '../../Images/bgfigure.jpg';
 import Grid from '@mui/material/Grid';
 
+// Firebase
+import auth from '../../Services/firebase';
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+const provider = new GoogleAuthProvider();
+
 function PageHome() {
+
+    // Metodo de Login do Usuario com Google
+    function handleLogin(){
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                console.log(result);                
+                    
+            }).catch((error) => {
+                // Handle Errors here.
+                console.log(error);
+            });
+    }
     
     return (
       <div>
@@ -37,9 +57,7 @@ function PageHome() {
                         <input type="text" id="email"></input>                       
                     </form>
                     <br></br>
-                    <button>
-                        <NavLink to="/ask" className="link">Login</NavLink>
-                    </button>
+                    <button onClick={handleLogin}>Google Login</button>
                     <br></br>
                     <br></br>
                     <button>
