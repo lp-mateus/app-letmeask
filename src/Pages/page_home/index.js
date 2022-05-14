@@ -1,5 +1,5 @@
-// Hook
-//import { useNavigate } from 'react-router-dom';
+// Hooks do React
+import { useState } from 'react';
 
 // Material UI
 import './style.css';
@@ -10,10 +10,14 @@ import Grid from '@mui/material/Grid';
 // Firebase
 import auth from '../../Services/firebase';
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-const provider = new GoogleAuthProvider();
-
 
 function PageHome() {
+
+    // FireBaser Integration
+    const provider = new GoogleAuthProvider();
+
+    // Criando usuario e seu estado para ter acesso aos dados do user
+    const [usuario, setUsuario] = useState({});
 
     // Metodo de Login do Usuario com Google
     function handleLogin(){
@@ -21,15 +25,18 @@ function PageHome() {
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 console.log("SUCESSO: " + result);
-                const user = result.user;
-                window.location.replace("/ask");
-
-                return user;
+                // Salvando e mapeando os dados do login no estado do objeto Usuario
+                setUsuario({
+                    id: result.user.uid,
+                    name: result.user.displayName,
+                    email: result.user.email,
+                    phone: result.user.phoneNumber,
+                });
                                     
             }).catch((error) => {
                 // Handle Errors here.
                 console.log(error);
-                alert("Failed Login ... Try again with a Google Account!")
+                alert("Failed Login ... Try again with a Google Account!" + error);
             });
     }
     
@@ -56,6 +63,7 @@ function PageHome() {
                     <h1>LetMeAsk</h1>       
                     <hr></hr>            
                     <h3>Cadastre-se ou realize Login para acessar todo os conteúdos!</h3>
+                    <h3>{usuario.name}</h3>
                     <br></br>
                     <form>                        
                         <label>E-mail:</label>
@@ -76,7 +84,6 @@ function PageHome() {
         </Grid>
       </div>
     );
-  }
+}
   
-  export default PageHome;
-  
+export default PageHome;
