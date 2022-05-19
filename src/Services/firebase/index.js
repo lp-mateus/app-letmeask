@@ -1,9 +1,12 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from "firebase/auth";
+// React Hooks
+// import { useState } from 'react';
 
-// TODO: Replace the following with your app's Firebase project configuration
+// Firebase
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+// Firebase project configuration
 const firebaseConfig = {
-  //...
   apiKey: "AIzaSyCQgPog4B405nWWea6rRSXYzQRv5RhCjd4",
   authDomain: "mlp-backend-letmeask.firebaseapp.com",
   projectId: "mlp-backend-letmeask",
@@ -14,7 +17,38 @@ const firebaseConfig = {
 
 };
 
+// Métodos necessários Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
-export default auth;
+// Metodo de Login do Usuario com Google
+export function loginGoogle(){
+
+  // Método de popup
+  signInWithPopup(auth, provider)
+      .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          console.log("SUCESSO: " + result);
+
+          // Mapeando usuario dados do login usuario
+          const usuario = {
+            id: result.user.uid,
+            name: result.user.displayName,
+            email: result.user.email,
+            phone: result.user.phoneNumber,
+          }
+          
+          // Armazenando localstorage
+          localStorage.setItem("id", usuario.id);
+          localStorage.setItem("name", usuario.name);
+          localStorage.setItem("email", usuario.email);
+          localStorage.setItem("phone", usuario.phone);
+
+      }).catch((error) => {
+          // Handle Errors here.
+          console.log(error);
+          alert("Failed Login ... Try again with a Google Account!" + error);
+      });
+
+}
