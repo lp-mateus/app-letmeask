@@ -45,6 +45,9 @@ export function loginGoogle(){
           localStorage.setItem("email", usuario.email);
           localStorage.setItem("phone", usuario.phone);
 
+          // Redirecionar usuario
+          window.location.replace("/ask");
+
       }).catch((error) => {
           // Handle Errors here.
           console.log(error);
