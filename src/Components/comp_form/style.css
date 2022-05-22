@@ -1,0 +1,18 @@
+.ask-form{
+    width: 100%;
+    height: auto;
+    color: #835AFD;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ask-input{
+    width: 25rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+}
+
+.main-input{
+    width: 20rem;
+    border-radius: 0.5rem;
+}

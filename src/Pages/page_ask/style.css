@@ -1,7 +1,7 @@
 .main-question{
     width: fit-content;
     background-color: #ffffff;
-    color: gray;    
+    color: #835AFD;    
     text-align: center;
     font-weight: bold;
     font-style: italic;
@@ -13,9 +13,4 @@
     height: 25rem;
     border-radius: 20%;
     opacity: 0.9;
-}
-
-.form-question{
-    width: 25rem;
-    height: 10rem;
 }

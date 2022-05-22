@@ -1,7 +1,9 @@
 import './style.css';
 import Icon from '../../Images/askicon.jpg';
+import Formulario from '../../Components/comp_form';
 import Header from '../../Components/comp_header';
 import Grid from '@mui/material/Grid';
+
 
 function PageAsk() {
 
@@ -36,16 +38,10 @@ function PageAsk() {
                             <h3>Contato: {Usuario.phone}</h3>                            
                         </div>
                         <br></br>
-                        <form>                        
-                            <label>Qual a sua pergunta?</label>
-                            <br></br>
-                            <input type="text" id="question" className="form-question"></input>
-                            <br></br>                      
-                        </form>
                         <br></br>
-                        <button>Perguntar</button>      
-                        <br></br> 
-                        <div><br></br></div>
+                        <br></br>
+                        <Formulario />
+                        <br></br>
                     </div>                
                 </Grid>
             </Grid>
